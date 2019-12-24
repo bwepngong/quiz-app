@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:isScrollContainer="true"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="false"
+            android:fadeScrollbars="true"
+            android:isScrollContainer="true"
+            android:keepScreenOn="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="8dp"
+                android:background="#97205D"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:ellipsize="marquee"
+                android:enabled="false"
+                android:fitsSystemWindows="true"
+                android:fontFamily="cursive"
+                android:labelFor="@id/question_one"
+                android:scrollbarStyle="outsideInset"
+                android:scrollHorizontally="false"
+                android:text="@string/title"
+                android:textAlignment="viewStart"
+                android:textColor="#FCF8F7F7"
+                android:textSize="12sp"
+                android:typeface="normal"
+                app:autoSizeTextType="uniform" />
+
+            <EditText
+                android:id="@+id/question_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:labelFor="@id/title"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:text="@string/question_one" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/a11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerOne"
+                    android:text="3"
+                    android:textAlignment="textStart" />
+
+                <RadioButton
+                    android:id="@+id/a12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerOne"
+                    android:text="9" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/answer_two_text"
+                android:text="@string/question_two" />
+
+            <EditText
+                android:id="@+id/answer_two_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:selectAllOnFocus="false"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_three" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Switch
+                    android:id="@+id/answer_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerThree"
+                    android:text="True or False?" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_four" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerFour"
+                    android:text="Every 8 years" />
+
+                <RadioButton
+                    android:id="@+id/answerFourRadio2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setAnswerFour"
+                    android:text="Every 4 years" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_five" />
+
+            <CheckBox
+                android:id="@+id/ans5_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dynamite" />
+
+            <CheckBox
+                android:id="@+id/ans5_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explosives" />
+
+            <CheckBox
+                android:id="@+id/ans5_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atomic bomb" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showToast"
+                android:text="See Results" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
